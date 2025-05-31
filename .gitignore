@@ -1,0 +1,147 @@
+# --- General / OS specific ignores ---
+.DS_Store             # macOS specific files
+Thumbs.db             # Windows specific files
+*.log
+*.tmp
+*.bak
+.vscode/              # VS Code settings (optional, you might want to commit some of these)
+# Uncomment the line below if you want to ignore all VS Code settings
+# .vscode/*
+# !.vscode/settings.json # Example: keep settings.json but ignore others
+# !.vscode/extensions.json
+# !.vscode/launch.json
+# !.vscode/tasks.json
+
+# --- Docker specific ignores ---
+# Ignore .env files that might contain sensitive Docker environment variables
+.env
+.env.*.local
+# Example: If your docker-compose creates a local volume folder you want to ignore
+# data/
+
+# --- React Project (my-react-app/) specific ignores ---
+# Node modules
+node_modules/
+
+# build output
+build/
+dist/
+out/
+
+# Dependency caches
+.parcel-cache/
+.eslintcache
+.yarn/
+.pnp/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Test coverage
+coverage/
+
+# Miscellaneous
+.cache/
+.public/ # If using a public folder for static assets, you might want to ignore generated ones
+*.env.* # Catch all .env files, specific local ones below
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# --- .NET Project (my-dotnet-app/) specific ignores ---
+# Rider specific files
+.idea/
+*.iml
+*.iws
+*.pidb
+*.userprefs
+*.bak.userprefs
+
+# Visual Studio / Common .NET build artifacts
+.vs/
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rm/
+[Aa]rm64/
+[Xx]64/
+[Xx]86/
+[Aa]ny[Cc]pu/
+
+# Compiled files
+*.suo
+*.user
+*.log
+*.tlog
+*.psess
+*.vsp
+*.vspx
+*.trx
+*.scc
+*.vspscc
+*.vssscc
+*.buildscc
+*.bak
+*.ncb
+*.opendb
+*.pdb
+*.exe
+*.dll
+*.com
+*.lib
+*.exp
+*.ilk
+*.idb
+*.opt
+*.res
+*.aps
+*.pch
+*.ipch
+*.resharper
+*.resharper.user
+*.dotsettings
+*.tmp
+*.temp
+*.csproj.user
+*.fsproj.user
+*.vbproj.user
+
+# NuGet packages and related files
+*.nupkg
+*.nuget.log
+packages/ # Older style of packages folder
+project.assets.json
+project.nuget.dgspec.json
+*.private.snk # Strong name key files
+
+# Local data (databases, etc.)
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# Test results
+TestResults/
+
+# Miscellaneous generated files
+_ReSharper.*/
+[Tt]emp/
+[Tt]emporary[Ff]iles/
+[Rr]ecovered[Ff]iles/
+[Cc]ache/
+[Ll]ogs/
+[Tt]race/
+[Rr]esults/
+
+# Source control (ignore nested .git repos if any, not common in monorepos)
+# If you accidentally initialize a git repo inside a subfolder, this will ignore it.
+# */.git/
+# */.gitignore
+desktop.ini
+UFC_Front/src/reportWebVitals.js
+UFC_Front/src/setupTests.js

@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres
+    container_name: ufc-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: ufcdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ufc-net
+
+  backend:
+    build:
+      context: ./UFC_API
+    container_name: ufc-api
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=ufcdb;Username=postgres;Password=123
+    ports:
+      - "5000:8080"
+    networks:
+      - ufc-net
+
+  frontend:
+    build:
+      context: ./UFC_front
+    container_name: ufc-front
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - ufc-net
+
+volumes:
+  postgres_data:
+
+networks:
+  ufc-net:
+    driver: bridge
