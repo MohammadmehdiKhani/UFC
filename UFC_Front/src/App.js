@@ -12,7 +12,7 @@ function App() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', padding: '2rem' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2rem' }}>
       {fighters.map(f => (
         <FighterCard key={f.id} fighter={f} />
       ))}
